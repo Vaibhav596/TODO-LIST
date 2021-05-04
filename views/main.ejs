@@ -1,0 +1,52 @@
+//This is the ejs template file design to show to user
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <script src="https://kit.fontawesome.com/a61baf1efc.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h1>TODO App</h1>
+    <hr>
+    //This is a form to add task and send the request through action /add-task/add and method POST
+    <form action="/add-task/add" method="POST">
+        <label>DESCRIPTION</label><br>
+        <input type="text" placeholder="What do you need to do?" name ="description"></input><br><hr>
+        <div id ="category">
+            <label>CATEGORY</label><br>
+            <select name="category" placeholder="Choose a category" style="border: none; width: 95%;">
+                <option value="SCHOOL">SCHOOL</option>
+                <option value="WORK">WORK</option>
+                <option value="PERSONAL">PERSONAL</option>
+                <option value="CLEANING">CLEANING</option>
+                <option value="OTHER">OTHER</option>
+        </select>
+        </div>
+        <div id = "date">
+            <label>DUE DATE</label><br>
+            <input type="date" name="date"></input>
+        </div><hr>
+        <button type="submit" id ="button1"><i class="fas fa-plus"></i>  ADD TASK</button>
+    </form>
+    //This is a form to delete task and send the request through action /delete-task/delete/ and method POST
+        <form action="/delete-task/delete/" method="POST">
+                <div class="delete-button">
+                    <button type="submit" id = "button2"> <i class="fas fa-trash-alt"></i>
+                        <span>  DELETE TASK</span>
+                    </button>
+                </div>
+                <% for(let element of todo_list){ %><hr>
+                    <li>
+                        <input type="checkbox" name="<%= element._id %>">
+                            <p><%= element.description %></p>
+                            <p><%= element.date %></p>
+                            <button id = "button3"><%= element.category %></button>
+                        
+                    </li>
+                <% } %>
+        </form> 
+</body>
+</html>

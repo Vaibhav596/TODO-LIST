@@ -1,0 +1,49 @@
+body{
+    color:grey;
+}
+h1{
+    text-align: center;
+    font-size: xx-large;
+    font-weight: 500;
+    font-family: sans-serif;
+}
+input{
+    border:none;
+}
+#category{
+    width :50%;
+    display: inline-block;
+    border-right: 2px solid grey;
+}
+#date{
+    width:45%;
+    display: inline-block;
+}
+#button1{
+    background-color: red;
+    width:200px;
+    height: 50px;
+    font-size: 20px;
+    color: white;
+    margin-bottom: 40px;
+}
+#button2{
+    background-color: blue;
+    width:200px;
+    height: 50px;
+    font-size: 20px;
+    color: white;
+}
+#button3{
+    background-color: purple;
+    color: white;
+    border:none;
+    position: relative;
+    margin-left: 90%;
+    margin-top: -10%;
+    height:40px;
+    width:60px;
+}
+form p{
+    color: black;
+}
